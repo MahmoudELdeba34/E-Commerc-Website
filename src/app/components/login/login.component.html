@@ -1,0 +1,24 @@
+<section class="bg-main-light my-3 w-75 mx-auto p-4 shadow rounded">
+    <form (ngSubmit)="handelLogin()" [formGroup]="loginForm">
+        <div>
+            <label for="email">E-Mail</label>
+            <input type="email" name="" id="email" class="form-control" formControlName="email">
+            <div class="alert alert-danger" *ngIf="(loginForm.get('email')?.touched||loginForm.get('email')?.value.length>0)&& loginForm.get('email')?.errors">
+                <p *ngIf="loginForm.get('email')?.getError('required')">email is requird</p>
+                <p *ngIf="loginForm.get('email')?.getError('email')">email  Format</p>
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="" id="password" class="form-control" formControlName="password">
+            <div class="alert alert-danger" *ngIf="(loginForm.get('password')?.touched||loginForm.get('password')?.value.length>0)&& loginForm.get('password')?.errors">
+                <p *ngIf="loginForm.get('password')?.getError('required')">password is requird</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')">must be at least 6 chars</p>
+            </div>
+        </div>
+        <button class="btn btn-main mt-2" [disabled]="loginForm.invalid">Login <span *ngIf="isLogin==true"><i class="fa-solid fa-spinner fa-spin"></i></span></button>
+        <div class="alert alert-danger" *ngIf="errMsg">
+            <p>{{errMsg}}</p>
+        </div>
+    </form>
+</section>

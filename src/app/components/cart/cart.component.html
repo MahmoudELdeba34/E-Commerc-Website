@@ -1,0 +1,28 @@
+<section class="w-75 bg-main-light mx-auto my-2 p-3 rounded-3">
+    <h2 >Shop Cart </h2>
+    <p class="text-main">Total Price : {{globalDetalis.totalCartPrice|currency:'EGP'}}</p>
+    <div class="row" *ngFor="let item of globalDetalis.products">
+        <div class="col-2 ">
+            <img [src]="item.product.imageCover" [alt]="globalDetalis.title" class="w-100 mb-3">
+        </div>
+        <div class="col-md-10 ">
+            <div>
+                <h2 class="h5">{{item.product.title}}</h2>
+                <h6 class="text-main">Price : {{item.price|currency:"EGP"}}</h6>
+                <div class="d-flex justify-content-between">
+                    <button class="text-main border-0" (click)="removeProductFromCart(item.product._id)"><i class="far fa-trash-can"></i> Remove</button>
+                <div class="p-2"> 
+                    <button class=" border border-2 border-success m-2"  (click)="updateProduct(item.product._id,item.count + 1 )">+</button>
+                    {{item.count}}
+                    <button class=" border border-2 border-success m-2" (click)="updateProduct(item.product._id,item.count - 1)">-</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+  
+    <button class="btn-main me-2">Cash Order</button>
+    <button class="btn-main" [routerLink]="['/paymentDetalis',globalDetalis._id]">Online Payment <i class="fa-brands fa-cc-visa text-bg-primary"></i></button>
+
+</section>

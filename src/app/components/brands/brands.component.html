@@ -1,0 +1,11 @@
+<section class="ng--bg-main-light rounded ">
+    <div class="container">
+        <div class="row g-4" >
+            <div class="col-md-3  " *ngFor="let dataInfo of data ">
+                <div class="product p-2" [routerLink]="['/barnds',dataInfo._id]">
+                    <img [src]="dataInfo.image" [alt]="dataInfo.name" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

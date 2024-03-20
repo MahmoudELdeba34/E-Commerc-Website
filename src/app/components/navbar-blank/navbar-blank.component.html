@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/"
+      ><span class="span1 me-2"><img src="./assets/img/e-commerce-icon-4.jpg" style="width: 60px;" alt=""></span> <span class="span2"></span
+      ><span class="span3 fw-bolder h5 ">FrishCart</span>
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active-link"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart" routerLinkActive="active-link"
+            >Cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="products"
+            routerLinkActive="active-link"
+            >prodructs</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="barnds" routerLinkActive="active-link"
+            >Brands</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="categories"
+            routerLinkActive="active-link"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            routerLink="/setting"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Setting
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/setting/update">Update</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/setting/forgetPassword"
+                >Forget Password</a
+              >
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0 d-flex algin-items-center">
+        <li class="nav-item me-3">
+          <i class="fas fa-shopping-cart"></i>
+          <i class="badge bg-main">1</i>
+      </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-facebook"> </i>
+        </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-facebook-messenger"></i>
+        </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-twitter"></i>
+        </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-whatsapp text-black"></i>
+        </li>
+        <li class="nav-item pe-3">
+          <i class="fa-brands fa-youtube"></i>
+        </li>
+        <li class="nav-item pe-3 btn-main" role="button">
+          <span (click)="logOutUser()">SignOut</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

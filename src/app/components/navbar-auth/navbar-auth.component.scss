@@ -1,0 +1,13 @@
+li{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.span3{
+   color: var(--main-color);
+   font-weight: bold;
+}
+.span1{
+    color:var(--rating-color);
+    font-weight: bold;
+}

@@ -1,0 +1,11 @@
+<section class="my-2 bg-main-light w-75 mx-auto p-3 rounded shadow">
+    <form [formGroup]="chickOut" (ngSubmit)="getDetalis()">
+        <label for="details" class="text-main h5">Details</label>
+        <textarea  id="details" class="form-control mb-2" placeholder="please enter details..." formControlName="details"></textarea>
+        <label for="phone"  class="text-main h5">Phone</label>
+        <input type="tel" placeholder="Please enter your phone..." class="form-control mb-2" id="phone"  name="phone" formControlName="phone">
+        <label for="city"  class="text-main h5">City</label>
+        <input type="text" placeholder="Please enter your city..." class="form-control mb-2" id="city"  name="city" formControlName="city">
+        <button class="btn-main">Check Out</button>
+    </form>
+</section>

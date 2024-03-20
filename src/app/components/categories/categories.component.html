@@ -1,0 +1,12 @@
+<section class="bg-main-light">
+<div class="container">
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let category of golbalCategories" [routerLink]="['/categories',category._id]">
+            <div class="item p-4 product">
+                <img [src]="category.image " [alt]="category.name" class="w-100" height="400">
+                <h2 class="text-center mt-2 text-main h5">{{category.name}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

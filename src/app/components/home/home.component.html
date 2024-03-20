@@ -1,0 +1,57 @@
+<section>
+    <div class="row">
+        <div class="col-md-10 g-0">
+            <owl-carousel-o [options]="customOptionsStaticSlider">
+              <ng-template carouselSlide><img src="./assets/img/products 1.png" height="400" alt="" class="w-100"></ng-template>  
+              <ng-template carouselSlide><img src="./assets/img/product 2.jpg" height="400" alt="" class="w-100"></ng-template>  
+              <ng-template carouselSlide><img src="./assets/img/product 3.jpg" height="400" alt="" class="w-100"></ng-template>
+              <ng-template carouselSlide><img src="./assets/img/product 4.jpg" height="400" alt="" class="w-100"></ng-template>  
+  
+
+            </owl-carousel-o>
+                
+        </div>
+        <div class="col-md-2 g-0">
+            <img src="./assets/img/product 3.jpg" height="200" alt="" class="w-100">
+            <img src="./assets/img/product 4.jpg" height="200" alt="" class="w-100">
+        </div>
+    </div>
+</section>
+<section class="my-3">
+   <!-- !items  -->
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let item of Categories">
+        <ng-template carouselSlide>
+            <div>
+                <img [src]="item.image" height="270" [alt]="item.name "  class="w-100 " >
+                <h4 class="text-center">{{item.name}}</h4>
+            </div>
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+
+</section>
+<section>
+    <div class="container">
+        <input type="search" class="form-control w-50 m-auto my-3 p-3" placeholder="Search For Products ......" [(ngModel)]="productSearch">
+    <div class="row g-4">
+        <div class="col-md-2 " *ngFor="let item of dataPopular.slice(0,12)|search:productSearch ">
+            <div class="product p-2">
+               <div [routerLink]="['/details',item._id]">
+                    <img [src]="item.imageCover" class="w-100" [alt]="item.title">
+                    <h4 class="h6 text-main fw-bold mt-2">{{item.category.name|uppercase}}</h4>
+                    <!-- <h3 class="h6">{{item.title.split(' ').slice(0,2).join(' ')}}</h3> -->
+                    <h3 class="h6">{{item.title|termtext:2 }}</h3>
+                  <h6 class=" text-success">{{item.createdAt|date}}</h6>
+                    <div class="d-flex algin-items-center justify-content-between p-2 ">
+                        <h4 class="text-muted">{{item.price |currency:'EGP'}} </h4>
+                        <span><i class="fas fa-star rating-color"></i>{{item.ratingsAverage}}</span>
+                    </div>
+               </div>
+                <button class="btn-main w-100" (click)="addcart(item._id)">Add product</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
